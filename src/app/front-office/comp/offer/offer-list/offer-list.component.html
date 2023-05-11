@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>List of Offers</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Shop Name</th>
+      <th>business Type</th>
+      <th>business PhoneNumber</th>
+      <th>business Email</th>
+      <th>Description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let offer of offers">
+      <td>{{ offer.namePer }}</td>
+      <td>{{ offer.shopName }}</td>
+      <td>{{ offer.businessType }}</td>
+      <td>{{ offer.businessPhoneNumber }}</td>
+      <td>{{ offer.businessEmail }}</td>
+      <td>{{ offer.description }}</td>
+      <td>{{ offer.startDate| date:'medium' }}</td>
+      <td>{{ offer.endDate| date:'medium' }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteOffer(offer.idOffer)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <a routerLink="/add-offer" class="btn btn-success">Add Offer</a>
+</div>

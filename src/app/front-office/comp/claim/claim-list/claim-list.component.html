@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>List of Claims</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Order Number</th>
+      <th>Product Reference</th>
+      <th>Creation Date</th>
+      <th>Treated</th>
+      <th>Subject</th>
+      <th>Subtheme</th>
+      <th>Description</th>
+      <th>File</th>
+      <th>QR Code</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let claim of claims">
+      <td>{{ claim.fullName }}</td>
+      <td>{{ claim.orderNumber }}</td>
+      <td>{{ claim.productRef }}</td>
+      <td>{{ claim.creationDate| date:'medium' }}</td>
+      <td>{{ claim.treated ? 'Treated' : 'Not Treated' }}</td> <!-- Use ternary operator to display 'Treated' or 'Not Treated' -->
+      <td>{{ claim.subject }}</td>
+      <td>{{ claim.subtheme }}</td>
+      <td>{{ claim.description }}</td>
+      <td><img style="width: 100px; height: 100px;" src="assets/img/{{ claim.cfile }}" alt="Image Size 100x100"></td>
+
+      <td>
+        <img [src]="'data:image/png;base64,' + claim.qrcode" alt="QR Code">
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteClaim(claim.idClaim)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <a routerLink="/add-claim" class="btn btn-success">Add Claim</a>
+</div>

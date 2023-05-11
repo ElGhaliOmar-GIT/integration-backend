@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Add Claim</h2>
+  <form [formGroup]="claimForm" #f="ngForm" (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="fullName">Full Name:</label>
+      <input type="text" class="form-control" formControlName="fullName" [(ngModel)]="claim.fullName" name="fullName" id="fullName">
+    </div>
+    <div class="form-group">
+      <label for="orderNumber">Order Number:</label>
+      <input type="text" class="form-control" formControlName="orderNumber" [(ngModel)]="claim.orderNumber" name ="orderNumber" id="orderNumber">
+    </div>
+    <div class="form-group">
+      <label for="productRef">Product Reference:</label>
+      <input type="text" class="form-control" formControlName="productRef" [(ngModel)]="claim.productRef" name="productRef" id="productRef">
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject:</label>
+      <select class="form-control"  name="subject" id="subject">
+        <option *ngFor="let option of subjectOptions" [value]="option">{{option}}</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="subtheme">Subtheme:</label>
+      <input type="text" class="form-control" formControlName="subtheme" [(ngModel)]="claim.subtheme" name="subtheme" id="subtheme">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" formControlName="description" [(ngModel)]="claim.description" name="description" id="description">
+    </div>
+    <div class="form-group">
+      <label for="cfile">File:</label>
+      <input type="file" class="form-control" id="cfile" (change)="onFileSelected($event)" name="cfile">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+

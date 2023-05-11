@@ -1,0 +1,53 @@
+<!-- BREADCRUMB AREA START -->
+<div class="ltn__breadcrumb-area ltn__breadcrumb-area-2 ltn__breadcrumb-color-white bg-overlay-theme-black-90 bg-image" data-bg="assets/front-office/img/bg/9.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ltn__breadcrumb-inner ltn__breadcrumb-inner-2 justify-content-between">
+          <div class="section-title-area ltn__section-title-2">
+            <h6 class="section-subtitle ltn__secondary-color">//  Welcome to our company</h6>
+            <h1 class="section-title white-color">Our Forums</h1>
+          </div>
+          <div class="ltn__breadcrumb-list">
+            <ul>
+              <li><a href="../../../../index.html">Home</a></li>
+              <li>Forums</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BREADCRUMB AREA END -->
+
+<!-- Gallery area start -->
+<div class="ltn__gallery-area mb-120">
+  <div class="container">
+    <div class="ltn__gallery-active row ltn__gallery-style-2 ltn__gallery-info-hide---">
+      <!-- gallery-item -->
+      <div *ngFor="let forum of forums" class="ltn__gallery-item filter_category_2 col-lg-4 col-sm-6 col-12">
+        <div class="ltn__gallery-item-inner">
+          <div class="ltn__gallery-item-img">
+            <a (click)="openDialog()" data-rel="lightcase:myCollection">
+              <img src="../../../../assets/front-office/img/forum/forum.jpg" alt="Image">
+              <span class="ltn__gallery-action-icon">
+                <i class="fas fa-search"></i>
+              </span>
+            </a>
+          </div>
+          <div class="ltn__gallery-item-info">
+            <h4><a href="portfolio-details.html">{{forum.title}}</a></h4>
+            <li>
+  </li>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<!-- Gallery area end -->

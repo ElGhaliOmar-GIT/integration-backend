@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>Add Offer</h2>
+  <form [formGroup]="offerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="namePer">Name:</label>
+      <input type="text" class="form-control" formControlName="namePer" id="namePer">
+    </div>
+    <div class="form-group">
+      <label for="shopName">Shop Name:</label>
+      <input type="text" class="form-control" formControlName="shopName" id="shopName">
+    </div>
+
+    <div class="form-group">
+      <label for="businessType">Business Type:</label>
+      <select class="form-control" formControlName="businessType" id="businessType">
+        <option *ngFor="let type of businessTypeOptions" [value]="type">{{type}}</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="businessPhoneNumber">Business PhoneNumber:</label>
+      <input type="integer" class="form-control" formControlName="businessPhoneNumber" id="businessPhoneNumber">
+    </div>
+    <div class="form-group">
+      <label for="businessEmail">Business Email:</label>
+      <input type="text" class="form-control" formControlName="businessEmail" id="businessEmail">
+    </div>
+
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" formControlName="description" id="description">
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date:</label>
+      <input type="date" class="form-control" formControlName="startDate" id="startDate">
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input type="date" class="form-control" formControlName="endDate" id="endDate">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
